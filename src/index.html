@@ -1,0 +1,63 @@
+<%= t.include("partials/_top.html") %>
+    
+
+  <!-- CODE THAT GOES IN THE FREEFORM -->
+  
+
+  <div class="sol-container">
+    
+    <h1 class="balance-text">Summer of Love</h1>
+    <h3 class=""><span>50 years later:</span> On Jan. 14, 1967, the Human Be-In proved to be a catalyst for the Summer of Love. The event held in Speedway Meadow in Golden Gate Park combined drugs, music and poetry and highlighted the rising tensions between the counter-culture and the establishment in San Francisco.</h3>
+    <img src="./assets/bg-wide.jpg">
+
+
+
+    <div id="stories">
+
+      <section id="one">
+      <% json.landing.forEach(function(t) { %>
+          <% if (t.class == 'top-two') { %>
+            <div class="top-two">
+              <a href="<%= t.link %>"><img src="<%= t.img %>"></a> 
+              <a href="<%= t.link %>"><h2 class=""><%= t.title %></h2></a>
+              <p class="deck"><%= t.deck %></p>   
+               
+            </div>
+          <% } %>
+      <% }); %>
+      </section>
+
+
+      <section id="two">
+      <% json.landing.forEach(function(t) { %>
+          <% if (t.class == 'top-two') { %>
+            <div class="top-two">
+              <a href="<%= t.link %>"><h2><%= t.title %></h2></a>
+              <p class="deck"><%= t.description %></p>   
+              <a href="<%= t.link %>"><img src="<%= t.img %>"></a>  
+            </div>
+          <% } %>
+      <% }); %>
+      </section>
+
+
+
+
+    </div>
+
+    
+
+
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.0.0/balancetext.min.js"></script>
+  <script>
+    balanceText();
+  </script>
+
+
+  <!-- CODE THAT GOES IN THE FREEFORM -->
+
+
+<%= t.include("partials/_bottom.html") %>

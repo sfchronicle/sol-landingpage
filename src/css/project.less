@@ -1,0 +1,84 @@
+.sol-container{
+
+  h1 {
+    font-family: @block-graphics;
+    font-style:italic; 
+    font-size:4em;
+    color:#ffb211;
+    line-height:1;
+    text-align:center;
+    font-weight:400;
+
+    @media @mobile{
+      font-size:2em;
+    }
+  }
+
+  h3 {
+    font-family: 'AntennaRegular', sans-serif; 
+    font-size:17px;
+    max-width:700px;
+    text-align:center;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin:0 auto 50px;
+    font-weight: 100;
+
+    @media @mobile{
+      font-size:14px;
+      padding:0;
+      line-height:1.56;
+    }
+  }
+
+  img{
+    width:100%;
+  }
+
+}
+
+
+#one{
+  .display-flex;
+  margin: 5% auto;
+  width:90%;
+  .flex-direction(row);
+
+  @media @tablet{
+    .flex-direction(column);
+    width:100%;
+  }
+  
+}
+
+.top-two{
+  .flex(0 1 50%);
+  padding:10px 15px;
+  position:relative;
+
+  h2{
+    font-size: 1.6em;
+    line-height: 1.2;
+    font-family:@block-graphics;
+    color: #ffb211;
+
+    @media @mobile{
+      font-size:1.2em;
+    }
+  }
+
+  
+  
+}
+
+section{
+  img{
+    width:100%;
+  }
+}
+
+.deck{
+  @media @mobile{
+  display:none;
+  }
+}
