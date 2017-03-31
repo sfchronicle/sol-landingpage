@@ -5,50 +5,179 @@
   
 
   <div class="sol-container">
-    
+    <img class="mobile-img" src="./assets/bg-wide.jpg">
     <h1 class="balance-text">Summer of Love</h1>
-    <h3 class=""><span>50 years later:</span> On Jan. 14, 1967, the Human Be-In proved to be a catalyst for the Summer of Love. The event held in Speedway Meadow in Golden Gate Park combined drugs, music and poetry and highlighted the rising tensions between the counter-culture and the establishment in San Francisco.</h3>
-    <img src="./assets/bg-wide.jpg">
-
-
+    <h2 class="balance-text">Be sure to wear flowers in your hair in San Francisco as the city celebrates the 50th anniversary of Summer of Love. The counterculture movement changed rock ‘n’ roll, Haight-Ashbury and more. But despite its name, the phenomenon was not contained to just one season in 1967. Discover – or rediscover – this radical era in Bay Area and American history with The Chronicle.</h2>
+    <img class="desk-img" src="./assets/bg-wide.jpg">
 
     <div id="stories">
 
-      <section id="one">
-      <% json.landing.forEach(function(t) { %>
-          <% if (t.class == 'top-two') { %>
-            <div class="top-two">
-              <a href="<%= t.link %>"><img src="<%= t.img %>"></a> 
-              <a href="<%= t.link %>"><h2 class=""><%= t.title %></h2></a>
-              <p class="deck"><%= t.deck %></p>   
-               
-            </div>
-          <% } %>
-      <% }); %>
+      <section id="intro">
+        <% json.current.forEach(function(t) { %>
+            <% if (t.class == 'intro') { %>
+              <div class="image">
+                <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+              </div>
+              <div class="text">
+                <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                <p><%= t.deck %></p> 
+                <a href="<%= t.link %>"><span class="button">READ MORE</span></a>
+              </div>
+            <% } %>
+        <% }); %>
       </section>
 
 
-      <section id="two">
-      <% json.landing.forEach(function(t) { %>
-          <% if (t.class == 'top-two') { %>
-            <div class="top-two">
-              <a href="<%= t.link %>"><h2><%= t.title %></h2></a>
-              <p class="deck"><%= t.description %></p>   
-              <a href="<%= t.link %>"><img src="<%= t.img %>"></a>  
-            </div>
-          <% } %>
-      <% }); %>
+      <section id="spotify">
+        <div class="spotify-wrapper">
+          <div class="text">
+           <h3>Summer of Love Soundtrack</h3>
+            <p class="balance-text">The songs of 1967, the year of Summer of Love.</p>
+          </div>
+          <div>
+            <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Asfchronicle%3Aplaylist%3A4ZMPFia2wej5xdnX9hgCfV" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
       </section>
 
 
 
+      <section id="s1">
+        <h2 class="sub-hed">Human Be-In</h2>
+        <div class="flex-wrapper">
+          <% json.current.forEach(function(t) { %>
+              <% if (t.class == 's1') { %>
+              <div class="story">
+                <div class="image">
+                  <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                </div>
+                <div class="text">
+                  <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                </div>
+              </div>
+              <% } %>
+          <% }); %>
+        </div>
+      </section>
+
+      <section id="s2">
+        <h2 class="sub-hed">Summer of Love</h2>
+        <div class="row">
+          <% json.current.forEach(function(t) { %>  
+              <% if (t.class == 's2-1') { %>
+                <div class="story"> 
+                  <div class="image">
+                    <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                  </div>
+                  <div class="text">
+                    <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                  </div>
+                </div>
+              <% } %>
+          <% }); %>
+        </div>
+
+        <div class="row s2-2">
+          <% json.current.forEach(function(t) { %>  
+            <% if (t.class == 's2-2') { %>
+              <div class="story"> 
+                  <div class="image">
+                    <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                  </div>
+                  <div class="text">
+                    <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                  </div>
+                </div>
+              <% } %>
+          <% }); %>
+        </div>
+
+        <div class="row s2-3">
+          <% json.current.forEach(function(t) { %>  
+            <% if (t.class == 's2-3') { %>
+              <div class="story"> 
+                  <div class="image">
+                    <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                  </div>
+                  <div class="text">
+                    <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                  </div>
+                </div>
+              <% } %>
+          <% }); %>
+        </div>
+
+      </section>
+
+      <section id="callout">
+        <div class="callout-wrapper">
+          <div class="text">
+            <h3>Tell us your story</h3>
+            <p class="balance-text">Were you in the Bay Area and part of the Summer of Love, as a spectator or participant? Send your memories in 150 words or less. Please include your full name and city of residence. Attach photos of you then and now as well as any other artifacts from the journey.</p>
+            <a href="mailto:phartlaub@sfchronicle.com?subject=Summer 1967">
+               <span class="call-button">Submit Story</span>
+            </a>         
+          </div>
+        </div>
+      </section>
+
+      <section id="s3">
+        <h2 class="sub-hed">Music</h2>
+
+        <div class="row">
+          <% json.current.forEach(function(t) { %>  
+              <% if (t.class == 's3') { %>
+                <div class="story"> 
+                  <div class="image">
+                    <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                  </div>
+                  <div class="text">
+                    <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                  </div>
+                </div>
+              <% } %>
+          <% }); %>
+        </div>
+      </section>
+
+      <section id="s4">
+        <h2 class="sub-hed">Art</h2>
+        <div class="row">
+          <% json.current.forEach(function(t) { %>  
+              <% if (t.class == 's4') { %>
+                <div class="story"> 
+                  <div class="image">
+                    <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                  </div>
+                  <div class="text">
+                    <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                  </div>
+                </div>
+              <% } %>
+          <% }); %>
+        </div>
+      </section>
+
+      <section id="s5">
+        <h2 class="sub-hed">Backstage</h2>
+        <div class="row">
+          <% json.current.forEach(function(t) { %>  
+              <% if (t.class == 's5') { %>
+                <div class="story s5"> 
+                  <div class="image">
+                    <a href="<%= t.link %>"><img src="<%= t.img %>"></a>              
+                  </div>
+                  <div class="text">
+                    <a href="<%= t.link %>"><h3><%= t.title %></h3></a>
+                    <p class="deck"><%= t.deck %></p>
+                  </div>
+                </div>
+              <% } %>
+          <% }); %>
+        </div>
+      </section>
 
     </div>
-
-    
-
-
-
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.0.0/balancetext.min.js"></script>
