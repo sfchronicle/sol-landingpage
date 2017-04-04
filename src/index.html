@@ -3,11 +3,12 @@
 
   <!-- CODE THAT GOES IN THE FREEFORM -->
   
-
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <div class="sol-container">
     <img class="mobile-img" src="http://projects.sfchronicle.com/2017/embed-sol-landingpage/images/bg-wide.jpg">
     <h1 class="balance-text">Summer of Love</h1>
-    <h2 class="balance-text">Be sure to wear flowers in your hair in San Francisco as the city celebrates the 50th anniversary of Summer of Love. The counterculture movement changed rock ‘n’ roll, Haight-Ashbury and more. But despite its name, the phenomenon was not contained to just one season in 1967. Discover – or rediscover – this radical era in Bay Area and American history with The Chronicle.</h2>
+    <%= t.include("partials/_social.html") %>
+    <h2>Be sure to wear flowers in your hair in San Francisco as the city celebrates the 50th anniversary of Summer of Love. The counterculture movement changed rock ‘n’ roll, Haight-Ashbury and more. But despite its name, the phenomenon was not contained to just one season in 1967. Discover – or rediscover – this radical era in Bay Area and American history with The Chronicle.</h2>
     <img class="desk-img" src="http://projects.sfchronicle.com/2017/embed-sol-landingpage/images/bg-wide.jpg">
 
     <div id="stories">
@@ -178,12 +179,60 @@
       </section>
 
     </div>
+    <div id="credits">
+      Developed by <a href="mailto:lvilla@sfchronicle.com">Lucio Villa</a><br><a href="https://twitter.com/luciovilla" target="_blank">@luciovilla</a><br>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.0.0/balancetext.min.js"></script>
   <script>
     balanceText();
+    // Twitter Intent
+(function() {
+  if (window.__twitterIntentHandler) return;
+  var intentRegex = /twitter\.com\/intent\/(\w+)/,
+      windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
+      width = 550,
+      height = 420,
+      winHeight = screen.height,
+      winWidth = screen.width;
+
+  function handleIntent(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement,
+        m, left, top;
+
+    while (target && target.nodeName.toLowerCase() !== 'a') {
+      target = target.parentNode;
+    }
+
+    if (target && target.nodeName.toLowerCase() === 'a' && target.href) {
+      m = target.href.match(intentRegex);
+      if (m) {
+        left = Math.round((winWidth / 2) - (width / 2));
+        top = 0;
+
+        if (winHeight > height) {
+          top = Math.round((winHeight / 2) - (height / 2));
+        }
+
+        window.open(target.href, 'intent', windowOptions + ',width=' + width +
+                                           ',height=' + height + ',left=' + left + ',top=' + top);
+        e.returnValue = false;
+        e.preventDefault && e.preventDefault();
+      }
+    }
+  }
+
+  if (document.addEventListener) {
+    document.addEventListener('click', handleIntent, false);
+  } else if (document.attachEvent) {
+    document.attachEvent('onclick', handleIntent);
+  }
+  window.__twitterIntentHandler = true;
+}());
   </script>
+
 
 
   <!-- CODE THAT GOES IN THE FREEFORM -->
